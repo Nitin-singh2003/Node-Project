@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Interface</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/javascripts/project.js"></script>
+    <script type="text/javascript" src="/js/Jquery.js"></script>
+  </head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+      <div class="maincontainer">
+          <div class="box">
+              <div class="heading">
+                <a href="/flight/displayallflights"> <img src="\images\display record.png" alt="Flight Logo" width="30"></a>
+                <img src="\images\logo.png" alt="Flight Logo" width="50">
+                Flight Interface
+              </div>
+
+              <form  action="/flight/flightsubmit" method="post" enctype="multipart/form-data" class="row g-3">
+                
+                <div class="col-md-6">
+                    <label for="flightname" class="form-label">Flight Name</label>
+                    <input type="text" class="form-control" id="flightname" name="flightname">
+                  </div>
+            
+                  <div class="col-md-6">
+                    <label for="flighttype" class="form-label">Flight Type</label>
+                    <select id="flighttype" class="form-select" name="flighttype">
+                      <option selected>Choose Type...</option>
+                      <option>Economy</option>
+                      <option>Business</option>
+                      <option>Economy/Business</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-4 " >
+                    <label for="noofseats" class="form-label">Number Of Seats</label>
+                    <input type="text" class="form-control" id="noofseats" name="noofseats">
+                  </div>
+            
+                  <div class="col-md-8 ">
+                    <label for="days" class="form-label">Select Flight Days</label>
+                    <div class="daysstyle">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="mon" id="days" name="days">
+                        <label class="form-check-label" for="days">
+                          Mon
+                        </label>
+                      </div>
+                      <span class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Tue" id="days" name="days">
+                        <label class="form-check-label" for="days">
+                          Tue
+                        </label>
+                      </span>
+                      <span class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Wed" id="days" name="days">
+                        <label class="form-check-label" for="days">
+                          Wed
+                        </label>
+                      </span>
+                      <span class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Tus" id="days" name="days">
+                        <label class="form-check-label" for="days">
+                        Thu
+                        </label>
+                      </span>
+                      <span class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Fri" id="days" name="days">
+                        <label class="form-check-label" for="days">
+                          Fri
+                        </label>
+                      </span>
+                      
+                      <span class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Sat" id="days" name="days">
+                        <label class="form-check-label" for="days">
+                          Sat
+                        </label>
+                      </span>
+
+                      <span class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Sun" id="days" name="days">
+                        <label class="form-check-label" for="days">
+                          Sun
+                        </label>
+                      </span>
+                    </div>
+                  </div>
+            
+                  <div class="col-md-3">
+                    <label for="source" class="form-label">Source City</label>
+                    <select id="source" class="form-select" name="sourcecity">
+                      <option selected>Source City..</option>  
+                      <!-- <option>Gwalior</option>
+                      <option>Bhind</option>
+                      <option>Indore</option>
+                      <option>New Delhi</option>
+                      <option>Benagaluru</option> -->
+                    </select>
+                  </div>
+
+                  <div class="col-md-3 " >
+                    <label for="deptime" class="form-label">Departure Time</label>
+                    <input type="time" class="form-control" id="deptime" name="deptime">
+                  </div>
+
+                  <div class="col-md-3">
+                    <label for="destination" class="form-label">Destination City</label>
+                    <select id="destination" class="form-select" name="destinationcity">
+                      <option selected>Destination City...</option> 
+                      <!-- <option>Gwalior</option>
+                      <option>Bhind</option>
+                      <option>Indore</option>
+                      <option>New Delhi</option>
+                      <option>Benagaluru</option> -->
+                    </select>
+                  </div>
+            
+                  <div class="col-md-3 " >
+                    <label for="arrtime" class="form-label">Arrival Time</label>
+                    <input type="time" class="form-control" id="arrtime" name="arrtime">
+                  </div>
+
+                  <div class="col-md-6 " >
+                    <label for="company" class="form-label">Company</label>
+                    <input type="text" class="form-control" id="company" name="company">
+                  </div>
+
+                  <div class="col-md-6 " >
+                    <label for="logo" class="form-label">Company</label>
+                    <input type="file" class="form-control" id="logo" name="logo">
+                  </div>
+
+                  <div class="col-md-6 " >
+                    <button type="submit" class="btn btn-secondary buttonStyle""><b>Submit</b></button>
+                  </div>
+
+                  <div class="col-md-6 " >
+                    <button type="reset" class="btn btn-secondary buttonStyle"><b>Reset</b></button>
+                  </div>
+
+                  <div class="col-md-12 " style="display: flex; justify-content: center; padding: 5px; font-weight: bold ;" >
+                    <%= message %>
+                  </div>
+            </form>
+         
+
+
+
+
+
+
+          </div>
+      </div>
+    
+</body>
+</html>
+<style>
+    .maincontainer{
+        background: #273c75;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+    }
+
+   .box{
+    height: auto;
+    width: 50%;
+    background: whitesmoke;
+    /* margin-top:50% ; */
+    border-radius: 10px;
+    padding: 15px;
+   } 
+   .heading{
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #273c75;
+    margin-bottom: 10px;
+   }
+   .daysstyle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+   }
+   .buttonStyle{
+    width: 100%;
+   }
+</style>
